@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:weightSum="6"
+    android:layout_marginHorizontal="20dp"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/QRCodeButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="QRCode"
+        android:onClick="apriQRCode"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:id="@+id/punteggiButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Registra punteggi prove"
+        android:onClick="apriPunteggiProve"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:id="@+id/aiutiButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Registra altri punteggi"
+        android:onClick="apriAltriPunteggi"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:id="@+id/penalitaButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Penalità"
+        android:onClick="apriPenalita"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:id="@+id/proveFaldoneButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="aiuti"
+        android:onClick="apriAiuti"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

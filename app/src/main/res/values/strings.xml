@@ -3,5 +3,18 @@
 
     <!--Login-->
     <string name="login_button">Login</string>
-    <string name="toast_error_login">Si è verificato un errore, contattare Cerru</string>
+    <string name="toast_error">Si è verificato un errore, contattare Cerru</string>
+    <string name="toast_on_cancel_dialog">Selezionare una caccia!</string>
+
+    <!--QRCode-->
+    <string name="scegli_squadra">Scegli una squadra</string>
+
+
+    <!--Punteggio-->
+    <string name="btn_salva">Salva</string>
+    <string name="scegli_prova">Scegli una prova</string>
+
+    <!--DialogAlert-->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">annulla</string>
 </resources>
