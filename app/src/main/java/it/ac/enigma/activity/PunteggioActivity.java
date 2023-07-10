@@ -76,21 +76,16 @@ public class PunteggioActivity extends AppCompatActivity {
 
     private void aggiungiProveSpinner() {
         List<ProvaDto> proveDtoList = new ArrayList<ProvaDto>();
+
+        proveDtoList.add( new ProvaDto(1L, "P1", "Colpisci il bersaglio") );
+        proveDtoList.add( new ProvaDto(2L, "P2", "Canestro") );
+        proveDtoList.add( new ProvaDto(3L, "P3", "RuzzlEnigma") );
+        proveDtoList.add( new ProvaDto(4L, "P4", "Il trasporto") );
+        proveDtoList.add( new ProvaDto(5L, "P5", "Memory") );
+
         //TODO
         proveDtoList.add(0, new ProvaDto(0L, "SEL", "-- seleziona una prova"));
-        squadraSpinner.setAdapter(new SquadreAdapter(_context, proveDtoList));
-
-        squadraSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+        provaSpinner.setAdapter(new SquadreAdapter(_context, proveDtoList));
     }
 
     private void aggiungiSquadreSpinner() {
@@ -100,7 +95,7 @@ public class PunteggioActivity extends AppCompatActivity {
     }
 
     public void salva(View v){
-        ProvaDto squadraDto = (ProvaDto) squadraSpinner.getSelectedItem();;
+        ProvaDto squadraDto = (ProvaDto) squadraSpinner.getSelectedItem();
         if(squadraDto == null || squadraDto.getId().equals(0L)){
             Utility.showToast(_context, getString(R.string.scegli_squadra));
         }
@@ -117,6 +112,15 @@ public class PunteggioActivity extends AppCompatActivity {
 
         if(punteggio.trim().length()==0){
             Utility.showToast(_context, "Inserire un numero valido");
+        }
+
+
+        if("PROVA".equals(tipologia)){
+            ProvaDto provaDto = (ProvaDto) provaSpinner.getSelectedItem();
+            if(provaDto == null || provaDto.getId().equals(0L)){
+                Utility.showToast(_context, getString(R.string.scegli_prova));
+            }
+            descrizione.concat(" - ").concat(provaDto.getDescrizione());
         }
 
         Integer punteggioInt = (_isPenalita?-1:1) * Integer.parseInt(punteggio);

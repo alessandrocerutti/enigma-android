@@ -23,7 +23,7 @@ public class RestManager {
     Gson gson;
 
     Context _context;
-    private static final String BASE_URL = "http://192.168.1.11:3000/rest";
+    private static final String BASE_URL = "http://192.168.0.105:3000/rest";
 
     public RestManager(Context context) {
         requestQueue = Volley.newRequestQueue(context.getApplicationContext());

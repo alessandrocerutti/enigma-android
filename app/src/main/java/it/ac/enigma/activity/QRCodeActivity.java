@@ -161,7 +161,14 @@ public class QRCodeActivity extends AppCompatActivity {
                     restManager.makeQrCodeStepRequest(_qrCode,_squadra.getId(), new RestManager.QRCodeStepCallback() {
                         @Override
                         public void onSuccess(ResponseQRCodeStep responseQRCodeStep) {
-                            esitoTextView.setText("OK! Step completato, consegnare il prossimo step: " + responseQRCodeStep.getDescrizione());
+
+                            if(responseQRCodeStep==null){
+                                esitoTextView.setText("OK! Step completato, CACCIA COMPLETATA!");
+
+                            } else {
+                                esitoTextView.setText("OK! Step completato, consegnare il prossimo step: " + responseQRCodeStep.getDescrizione());
+
+                            }
 
                             Handler handler = new Handler();
                             handler.postDelayed(new Runnable() {
@@ -169,7 +176,7 @@ public class QRCodeActivity extends AppCompatActivity {
                                 public void run() {
                                     isRequestOn = true;
                                 }
-                            }, 5000);
+                            }, 6000);
                         }
                         @Override
                         public void onError(VolleyError error) {
